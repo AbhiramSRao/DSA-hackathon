@@ -129,5 +129,6 @@
     const nodes=[];const nodeWalk=n=>{if(!n)return;const p=coords.get(n);nodes.push(`<circle class="tree-node" cx="${p.x}" cy="${p.y}" r="15"/><text class="tree-node-text" x="${p.x}" y="${p.y+1}">${n.value}</text>`);nodeWalk(n.left);nodeWalk(n.right);};nodeWalk(root);
     $('#tree-visual').innerHTML=`<svg class="tree-svg" viewBox="0 0 ${width} ${height}" role="img" aria-label="Merged binary search tree">${edges.join('')}${nodes.join('')}</svg>`;
   }
+  
   setFragments(examples.compatible);
 })();
