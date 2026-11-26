@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#fff0e8" />
+  <title>Student Index Recovery System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Student Index Recovery home"><span class="brand-mark">S</span><span>INDEX<span class="brand-muted"> / RECOVERY</span></span></a>
+    <nav class="nav-links" aria-label="Main navigation"><a href="#how">How it works</a><a href="#about">About</a><a class="nav-cta" href="recover.html">Open recovery lab <span>↗</span></a></nav>
+    <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode"><span class="theme-icon">◐</span><span class="theme-label">Dark mode</span></button>
+  </header>
+  <main>
+    <section class="hero page-width">
+      <div class="hero-copy"><div class="eyebrow"><span class="pulse-dot"></span> DATA STRUCTURES · REGISTRAR TOOLS</div>
+        <h1>STUDENT INDEX<br><span>RECOVERY</span> SYSTEM</h1>
+        <p class="hero-intro">A migration scattered the registrar’s student index into smaller tree fragments. Reconnect the pieces, preserve their structure, and verify the recovered ordering.</p>
+        <div class="hero-actions"><a class="button button-primary" href="recover.html">Start a recovery <span>↗</span></a><a class="text-link" href="#how">See how it works <span>↓</span></a></div>
+        <div class="hero-meta"><span>01 — FRAGMENT</span><i></i><span>02 — RECONNECT</span><i></i><span>03 — VERIFY</span></div>
+      </div>
+      <div class="hero-art" aria-label="Illustration of three tree fragments combining into a recovered tree">
+        <div class="art-label">REASSEMBLING RECORDS <span>● LIVE MODEL</span></div>
+        <div class="fragment fragment-a"><span class="mini-tag">FRAGMENT 01</span><b class="node n2">2</b><b class="node n1">1</b><span class="edge e21"></span><small>leaf match</small></div>
+        <div class="fragment fragment-b"><span class="mini-tag">FRAGMENT 02</span><b class="node n3">3</b><b class="node n2b">2</b><b class="node n5">5</b><span class="edge e32"></span><span class="edge e35"></span></div>
+        <div class="fragment fragment-c"><span class="mini-tag">FRAGMENT 03</span><b class="node n5c">5</b><b class="node n4">4</b><span class="edge e54"></span></div>
+        <div class="art-arrows">···································›</div>
+        <div class="final-tree"><span class="mini-tag">RECOVERED BST</span><b class="node fn3">3</b><b class="node fn2">2</b><b class="node fn5">5</b><b class="node fn1">1</b><b class="node fn4">4</b><span class="edge fe32"></span><span class="edge fe35"></span><span class="edge fe21"></span><span class="edge fe54"></span><div class="inorder-chip">INORDER <b>[1, 2, 3, 4, 5]</b></div></div>
+        <div class="art-stamp">BST<br>VALID</div>
+      </div>
+    </section>
+    <section class="ticker"><div>STRUCTURE PRESERVED <span>✳</span> EVERY FRAGMENT ACCOUNTED FOR <span>✳</span> ORDER VERIFIED <span>✳</span> STRUCTURE PRESERVED <span>✳</span> EVERY FRAGMENT ACCOUNTED FOR <span>✳</span></div></section>
+    <section class="how-section page-width" id="how"><div class="section-heading"><div><div class="eyebrow">THE RECOVERY ROUTE</div><h2>Three steps.<br><span>One coherent index.</span></h2></div><p>Each connection is structural. A fragment only joins where its root matches a leaf already in the tree.</p></div>
+      <div class="steps-grid">
+        <article class="step-card"><div class="step-top"><span>01</span><span class="step-symbol">⌘</span></div><h3>Bring in fragments</h3><p>Enter the root and child IDs for each small BST, or paste a set in the supported format.</p><div class="step-visual mini-fragments"><span>ROOT 12</span><span>ROOT 8</span><span>ROOT 19</span><b>↘</b></div></article>
+        <article class="step-card"><div class="step-top"><span>02</span><span class="step-symbol">⌁</span></div><h3>Reconnect by identity</h3><p>Find a leaf whose ID matches another fragment’s root, then attach that whole fragment in place.</p><div class="step-visual match-visual"><b>8</b><span class="match-line"></span><b class="match-node">8</b><small>LEAF ↔ ROOT</small></div></article>
+        <article class="step-card"><div class="step-top"><span>03</span><span class="step-symbol">✓</span></div><h3>Verify the recovery</h3><p>Check every fragment was used once and validate the full tree against BST ordering bounds.</p><div class="step-visual verify-visual"><span>ALL PIECES</span><b>+</b><span>BST RULES</span><b>→</b><strong>VALID</strong></div></article>
+      </div>
+      <div class="journey-cta"><span>Have fragments ready to test?</span><a class="button button-dark" href="recover.html">Enter the recovery lab <span>↗</span></a></div>
+    </section>
+    <section class="about-section" id="about"><div class="page-width"><div class="section-heading about-heading"><div><div class="eyebrow">THE TOOLKIT</div><h2>Built around the<br><span>right fundamentals.</span></h2></div><p>The recovery process combines classic tree operations with careful structural checks, then makes each result easy to inspect.</p></div>
+      <div class="about-grid"><article><span class="about-number">01</span><h3>Binary search trees</h3><p>Each fragment keeps its left and right relationships as it is reconnected.</p><span class="about-icon">⑂</span></article><article><span class="about-number">02</span><h3>Structural merging</h3><p>Matching leaf and root IDs determine where fragments can join.</p><span class="about-icon">⤳</span></article><article><span class="about-number">03</span><h3>Range validation</h3><p>Every node is checked against the bounds inherited from its ancestors.</p><span class="about-icon">⟷</span></article><article><span class="about-number">04</span><h3>Inorder traversal</h3><p>The sorted traversal gives a readable check of the recovered ordering.</p><span class="about-icon">↗</span></article><article><span class="about-number">05</span><h3>Fragment accounting</h3><p>Track usage so missing, repeated, or disconnected pieces are caught.</p><span class="about-icon">▦</span></article><article><span class="about-number">06</span><h3>Explainable outcomes</h3><p>Show the recovered tree or report why the set cannot form a valid index.</p><span class="about-icon">◎</span></article></div>
+    </div></section>
+  </main>
+  <footer class="footer page-width"><a class="brand" href="index.html"><span class="brand-mark">S</span><span>INDEX<span class="brand-muted"> / RECOVERY</span></span></a><span>STRUCTURAL RECOVERY · BST VALIDATION</span><a href="recover.html">OPEN LAB ↗</a></footer>
+  <script src="app.js"></script>
+</body>
+</html>
